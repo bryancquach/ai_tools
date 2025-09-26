@@ -1,0 +1,60 @@
+Please analyze the following code repository with a top-down, architecture-first approach. I've provided the repository contents [as attachments/below].
+
+Perform a comprehensive static analysis and provide your findings in the following structure:
+
+## 1. Executive Summary
+- Primary purpose and domain
+- Technology stack overview
+- Key architectural patterns identified
+- Critical findings summary
+
+## 2. Architecture Overview
+- System components and their relationships
+- Create Mermaid diagrams for:
+  - High-level component/system architecture
+  - Key class relationships (if applicable)
+  - Data flow diagrams
+- Identify architectural patterns (MVC, microservices, etc.)
+
+## 3. Dependency Analysis
+- External dependencies (with versions from Poetry/UV configs)
+- Dependency health and currency
+- Potential version conflicts or concerns
+- Internal module dependencies
+
+## 4. Integration Points
+- External APIs and services
+- Database connections and schemas
+- File system interactions
+- Network communications
+- Message queues or event systems
+
+## 5. Development Workflow
+- CI/CD pipeline analysis (from configs)
+- Testing strategy and coverage
+- Build and deployment processes
+- Development environment setup (Vagrant, containers, etc.)
+
+## 6. Code Quality Metrics
+- Complexity analysis
+- Adherence to Python/R/bash best practices
+- Code organization and modularity
+- Documentation completeness
+- Design pattern usage
+
+## 7. Security Assessment
+- Potential vulnerabilities
+- Sensitive data handling
+- Authentication/authorization mechanisms
+- Input validation and sanitization
+- Dependency vulnerabilities
+
+## 8. Troubleshooting Guide
+- Logging mechanisms and locations
+- Common error patterns
+- Debug entry points
+- Monitoring and observability features
+
+For each section, provide specific file references and line numbers where applicable. Generate all diagrams in Mermaid syntax embedded in the Markdown. Ask me questions one at a time if you need additional clarification.
+
+[Repository contents follow]
