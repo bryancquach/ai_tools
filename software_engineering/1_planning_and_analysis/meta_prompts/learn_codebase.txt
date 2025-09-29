@@ -1,6 +1,6 @@
 Please analyze the following code repository with a top-down, architecture-first approach. I've provided the repository contents [as attachments/below].
 
-Perform a comprehensive static analysis and provide your findings in the following structure:
+Perform a comprehensive static analysis and provide your findings as a Markdown document in the following structure:
 
 ## 1. Executive Summary
 - Primary purpose and domain
