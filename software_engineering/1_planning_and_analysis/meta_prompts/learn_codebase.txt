@@ -1,4 +1,4 @@
-Please analyze the following code repository with a top-down, architecture-first approach. I've provided the repository contents [as attachments/below].
+Please analyze this code repository with a top-down, architecture-first approach.
 
 Perform a comprehensive static analysis and provide your findings as a Markdown document in the following structure:
 
@@ -14,7 +14,8 @@ Perform a comprehensive static analysis and provide your findings as a Markdown 
   - High-level component/system architecture
   - Key class relationships (if applicable)
   - Data flow diagrams
-- Identify architectural patterns (MVC, microservices, etc.)
+- Identify architectural patterns (MVC, microservices, design patterns, etc.)
+- Identify whether there are any files and components that contain core mathemetical and statistical operations. If so record these in a table. If the operations are part of a known algorithm or method note this.
 
 ## 3. Dependency Analysis
 - External dependencies (with versions from Poetry/UV configs)
@@ -55,6 +56,4 @@ Perform a comprehensive static analysis and provide your findings as a Markdown 
 - Debug entry points
 - Monitoring and observability features
 
-For each section, provide specific file references and line numbers where applicable. Generate all diagrams in Mermaid syntax embedded in the Markdown. Ask me questions one at a time if you need additional clarification.
-
-[Repository contents follow]
+For each section, provide specific file references and line numbers where applicable. Generate all diagrams in Mermaid syntax embedded in the Markdown and export the document to a Markdown file titled "architecture_overview.md". If this file currently exists, do not replace it. Instead ask me for a different filename. Ask me questions one at a time if you need additional clarification.
