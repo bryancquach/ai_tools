@@ -1,0 +1,223 @@
+## UNIVERSAL PROMPT: GPT-5 Core Statistical / Algorithmic Analysis Report
+
+You are an expert software + computational statistics + numerical analysis analyst. Perform a static (non-executing) deep-dive of the target codebase and produce a single Markdown document named: core_algorithms_overview.md
+
+### 0. Inputs You Will Be Given (Assumed)
+- A repository containing source code (may include some of: Python, R, C/C++, Rust, Java, Scala, Julia, Bash).
+- Possibly: test suites, build scripts, Dockerfiles, notebooks, CLI tools.
+- Your job is purely static inspection (no execution), inferring intent and algorithmic structure.
+
+If any assumed component is missing, note it explicitly in a short “Assumptions & Gaps” note near the top (after Section 1).
+
+---
+
+### 1. Objectives (What You Must Deliver)
+Produce a rigorous technical report that:
+1. Identifies core computational / statistical / numerical algorithms.
+2. Maps concepts to concrete code entities (functions, classes, scripts) with file paths and approximate line ranges.
+3. Explains underlying mathematics (derivations, identities, transformations).
+4. Surfaces call chains, data flows, dependency structure.
+5. Documents edge cases, numerical stability, performance characteristics, and scaling limits.
+6. Supplies validated Mermaid diagrams (must parse; no syntax errors).
+7. Recommends actionable improvements (architecture, performance, robustness).
+8. Includes a final checklist mapping requirements to sections.
+
+---
+
+### 2. Mandatory Report Structure (Exact Headings)
+Use these exact section headings (omit a section ONLY if truly inapplicable, and then explain why):
+
+1. Overview & Objectives  
+2. Repository Inventory 
+3. Algorithmic Component Discovery  
+4. Dependency & Call Chain Analysis  
+5. Algorithm Deep Dive  
+6. Concept-to-Code Mapping Table  
+7. Additional Mermaid Diagrams  
+8. Implementation Approaches & Trade-offs  
+9. Extension & Debugging Guidance  
+10. Conceptual Glossary  
+11. Performance & Scalability Notes  
+12. Risk & Mitigation Summary  
+13. Recommendations  
+14. Appendices  
+15. Completion Checklist vs Requirements  
+
+Appendices (Section 14) MUST include:
+- 14.1 Pseudocode (for one or more core loops)
+- 14.2 Mathematical Identities
+- 14.3 Line Reference Index (Sample Landmark Lines)
+
+---
+
+### 3. Table Specifications (STRICT)
+
+#### Section 6: Concept-to-Code Mapping Table
+Columns (exact order):
+| Concept | File (Relative Path) | Function / Region | Lines (Approx) | Description |
+
+Rules:
+- Every row must have a real relative file path (no blank or generic “Python” / “R” / “C”).
+- Split concepts appearing in multiple languages into separate rows.
+- 15–30 rows covering: initialization, selection, iteration control, transformation, matrix ops, statistical tests, masking/filtering, convergence/termination, summarisation/output, domain-specific kernels, parallelisation hooks, allocation buffers, streaming logic, etc.
+- Use ASCII: r^2 not r²; avoid Unicode math formatting inside tables.
+
+#### Section 14.3: Line Reference Index
+Columns:
+| Purpose | File (Relative Path) | Lines (Approx) |
+
+Include representative “landmarks” (core loop, numerical kernel, stability guard, error handling branch, key transformation, termination condition).
+
+Use en dash or hyphen consistently (e.g., `138–172` or `138-172`—be uniform).
+
+---
+
+### 4. Mermaid Diagram Requirements
+Provide at least:
+- A cross-component dependency or architecture graph (flowchart or graph).
+- A core data / transformation pipeline diagram.
+- (Optional) A per-round / per-iteration internal algorithm flow.
+
+Constraints:
+- Validate diagrams internally before output (no syntax errors).
+- Avoid Unicode superscripts (no ²).
+- Simplify labels if parsing fails (remove parentheses, punctuation).
+- One diagram per fenced code block:
+  ```mermaid
+  flowchart LR
+    A --> B
+  ```
+- No chained bracketed node declarations that previously caused parse failures (e.g., “A --> B[Thing] --> C[Another]” if the parser is brittle—split into separate edges if needed).
+
+---
+
+### 5. Mathematical Deep Dive (Section 5)
+Explain:
+- Core transformations (e.g., conditioning, orthogonalisation, convolution, FFT step, dynamic programming recurrence, gradient update rule).
+- Underlying identities (e.g., Schur complement, Sherman–Morrison, log-likelihood decomposition, Bayes rule chain, softmax normalization).
+- Statistical testing steps (e.g., Wald test, likelihood ratio, permutation approximation).
+- Any regularisation or stabilisation (ridge, dropout, clipping, scaling, normalisation).
+- Precision / error propagation considerations.
+
+If formulas are approximate or inferred, label them “Inferred (Static Approximation).”
+
+---
+
+### 6. Edge Cases & Stability
+Include table:
+| Issue | Current / Observed Handling | Risk | Recommendation |
+
+Cover at least: singular matrices / degeneracy, boundary inputs (empty, single element, large dimension), extreme numeric ranges, concurrency race (if applicable), truncated data, streaming chunk mismatch, schema mismatch.
+
+---
+
+### 7. Performance & Scalability (Section 11)
+Estimate complexity using:
+- n (observations / rows / variants / samples)
+- d (features / dimensions)
+- k (iterations / rounds / layers)
+- m (selected items / active set size)
+- Provide big-O for each dominant kernel (e.g., matrix inversion O(k^3), convolution O(n log n), DP O(n*d)).
+Mention memory footprint drivers (dense vs sparse).
+
+---
+
+### 8. Recommendations (Section 13)
+Provide a numbered list (8–15 items) covering:
+- Architectural refactors
+- Numerical robustness
+- Logging / observability
+- Performance (vectorisation, incremental updates, caching)
+- Testing gaps (parity tests, fuzzing)
+- Security or data integrity (input validation, parameterized queries, sandboxing)
+- Documentation / onboarding improvements
+
+---
+
+### 9. Completion Checklist (Section 15)
+Matrix:
+| Requirement | Delivered | Section |
+Where Delivered is “Yes” (or “N/A – reason”).
+
+---
+
+### 10. Style & Consistency Rules
+- Start file with: `# Core Algorithms Overview` and a “Generated: YYYY-MM-DD” line.
+- Use backticks for code identifiers and file paths.
+- Avoid HTML.
+- ASCII only for math inline (no Unicode superscripts/subscripts).
+- Keep paragraphs tight; prefer bullet lists over dense prose.
+- Clearly mark inferred assumptions when direct evidence is absent.
+
+---
+
+### 11. Assumptions Handling
+If the repository lacks something (e.g., no tests, no numerical kernels), explicitly:
+Assumption: No dedicated numerical kernel file detected; transformation inferred from composite utility functions X, Y.
+
+---
+
+### 12. Failure Conditions (Do NOT Produce Final Report If)
+- Any row in Section 6 or Section 14.3 lacks a file path.
+- No explicit mathematical identity section.
+- Mermaid diagrams are syntactically invalid.
+If a failure condition is hit: Output a short diagnostic section instead of the full report explaining what’s missing.
+
+---
+
+### 13. Optional Enhancements (If Clearly Present)
+Add subsections for:
+- Domain ontology mapping (domain term → implementation).
+- Cross-language parity risks.
+- Data schema normalization layer.
+
+Only include if supported by evidence.
+
+---
+
+### 14. Pseudocode Guidance
+Provide minimal, canonical pseudocode capturing:
+- Control flow
+- Key data structure updates
+- Numerical kernel invocation
+Keep it implementation-agnostic (avoid language-specific syntax unless clarifying).
+
+---
+
+### 15. Tone
+Analytical, audit-ready, concise. No marketing language. No superfluous enthusiasm.
+
+---
+
+### 16. Output Contract (Strict)
+Return ONLY the final Markdown document (no preamble commentary, no JSON).  
+No placeholders unresolved (replace all {{PLACEHOLDER}} tokens or omit the line if unknown).
+
+---
+
+### 17. Internal Self-Check Before Emitting
+Confirm:
+- Section headings exactly match spec.
+- All required tables exist and are populated.
+- Diagrams parse logically.
+- No TODO / FIXME strings remain.
+- All file paths use consistent relative style (e.g., `src/module/file.py` not absolute).
+
+---
+
+### 18. If Repository Is Very Large
+Scope to:
+- Top 15–25 algorithm-critical files.
+- Summarise repetitive utility patterns.
+- Note skipped peripheral areas with justification (“Excluded UI theming—no algorithmic content”).
+
+---
+
+### 19. If Multiple Languages Present
+Ensure mapping highlights parity or divergence (e.g., R vs Python vs C++ core loops) in Section 3 or 5.
+
+---
+
+### 20. Line Ranges
+If precise lines unavailable, approximate windows (e.g., 120–150) and label as "(approximate)". If file unreadable or minified, mark “(Approx, unreadable source).”
+
